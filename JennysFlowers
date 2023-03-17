@@ -1,0 +1,20 @@
+/** Jennys Flowers:
+Sunflowers (9)
+Roses (5)
+Lillies (12)
+Daisies (5) 
+Violets (18)
+**/
+
+CREATE TABLE Jenny (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, prices INTEGER);
+INSERT INTO Jenny VALUES (1, "Sunflowers", 9,3);
+INSERT INTO Jenny VALUES (2, "Roses", 12,5);
+INSERT INTO Jenny VALUES (3, "Lillies", 12,5);
+INSERT INTO Jenny VALUES (4, "Daisies", 5,7);
+INSERT INTO Jenny VALUES (5, "Violets", 18,9);
+
+---displays prices greater than $6 in order by names of the flowers
+SELECT * FROM Jenny WHERE prices > 6 ORDER BY name;
+
+---displays prices added together and the stock available at this price
+SELECT prices, sum(quantity) FROM Jenny GROUP BY prices;
